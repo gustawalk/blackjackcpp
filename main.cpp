@@ -339,7 +339,7 @@ int generate_cards(int qtd){
             cout << "----------" << endl;
             cout << "| " << "K" << "      |"<< endl;
             cout << "|        |" << endl;
-            cout << "|        |" << endl;
+            cout << "|        |" <<  endl;
             cout << "|        |" << endl;
             cout << "|      " << "K" <<" |" << endl;
             cout << "----------" << endl;
