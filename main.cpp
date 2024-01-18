@@ -227,6 +227,8 @@ void game_result(int winner){
         }break;
         case 3:{
             cout << "Parece que deu empate, dois ruim fudido";
+            dinheiro_player_um += bet_player_um;
+            dinheiro_player_dois += bet_player_dois;
         }break;
         default:{
             cout << "Algo deu errado :(";
@@ -241,9 +243,9 @@ void game_result(int winner){
         rodada++;
         bet_game();
     }else{
+        clear();
         cout << "Temos um vencedor!!" << flush;
         sleep(2);
-        clear();
         if(dinheiro_player_um <= 0){
             lose_game(1);
         }else if(dinheiro_player_dois <= 0){
@@ -253,18 +255,22 @@ void game_result(int winner){
 }
 
 void lose_game(int loser){
+
+    clear();
     char escolha;
     switch (loser){
         case 1:{
             cout << nome_player_um << " voce perdeu seu bosta lixo merdaa";
         }break;
         case 2:{
-            cout << nome_player_dois << " o " << nome_player_um << " pisou na sua bola seu bosta";
+            cout << nome_player_dois << " o/a " << nome_player_um << " pisou na sua bola seu bosta";
         }break;
         default:{
             cout << "algo deu merda foi mal";
         }
     }
+
+    sleep(4);
 
     cout << endl << endl << "Deseja jogar novamente? Y/n" << endl;
     cin >> escolha;
